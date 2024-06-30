@@ -4,6 +4,11 @@ import { EventsComponent } from './forms/events/events.component';
 
 const routes: Routes = [
   {
+    path: "",
+    redirectTo: "/events",
+    pathMatch: "full"
+  },
+  {
     path: "events",
     component: EventsComponent
   }
