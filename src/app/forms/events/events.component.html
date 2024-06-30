@@ -1,0 +1,24 @@
+<div class="main-content">
+  <div class="container-fluid col-md-10 offset-md-1">
+
+    <div class="row centro" *ngIf="eventList$ | async as eventList">
+      <mat-card class="col-lg-3 col-md-5 lista" appearance="outlined" *ngFor="let event of eventList">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{event.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <p class="event-date">Data do Evento: {{event.startDate}}</p>
+        <mat-card-content>
+          <p>
+            {{event.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="actions">
+          <button mat-button>LIKE</button>
+          <button mat-button>Details</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
