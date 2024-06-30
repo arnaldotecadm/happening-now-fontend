@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ApiUrl: 'http://localhost:8080',
+  ApiUrl: 'https://happening-now-70870014a13a.herokuapp.com',
 };
 
 /*
