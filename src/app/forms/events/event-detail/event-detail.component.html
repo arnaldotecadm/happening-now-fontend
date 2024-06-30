@@ -1,0 +1,41 @@
+<div class="main-content" *ngIf="event$ | async as event">
+  <div class="container-fluid col-md-10">
+
+    <div class="row">
+      <mat-card class="col-md-7 lista" appearance="outlined">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title></mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{'data:image/jpeg;base64,'+event.thumbnail}}">
+        <p class="event-date">{{event.name}} </p>
+        <mat-card-content>
+          <p>
+
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="actions">
+          
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="col-md-4 lista" appearance="outlined">
+        <mat-card-header style="margin: 5%;">
+          <mat-card-title>Event Details</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div>
+            <div class="row">
+              <div class="col-md-1">
+                <mat-icon aria-hidden="false" fontIcon="calendar_month"></mat-icon>
+              </div>
+              <div class="col-md-5">Data</div>
+            </div>
+            <div class="offset-md-1">{{event.startDate}}</div>
+          </div>
+        </mat-card-content>
+
+      </mat-card>
+    </div>
+  </div>
+</div>

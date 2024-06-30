@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EventsComponent } from './forms/events/events.component';
+import { EventListComponent } from './forms/events/event-list/event-list.component';
+import { EventDetailComponent } from './forms/events/event-detail/event-detail.component';
 
 const routes: Routes = [
   {
@@ -10,12 +11,19 @@ const routes: Routes = [
   },
   {
     path: "events",
-    component: EventsComponent
+    component: EventListComponent
+  },
+  {
+    path: "events/:identifier",
+    component: EventDetailComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { useHash: true }),
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -4,11 +4,16 @@ import { environment } from "src/environments/environment";
 
 const API = environment.ApiUrl;
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class EventService {
-    constructor(private http: HttpClient){}
+    constructor(private http: HttpClient) { }
 
-    getAll(){
+    getAll() {
         return this.http.get<any[]>(API + "/event")
+    }
+
+
+    getById(identifier: string) {
+        return this.http.get<any>(API + "/event/" + identifier)
     }
 }
